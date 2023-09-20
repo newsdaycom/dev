@@ -18,6 +18,9 @@ echo "Installing awscli, nodejs, python, cask"
 brew install --force awscli nodejs python cask
 brew upgrade --force awscli nodejs python cask
 
+echo "Installing yarn"
+sudo npm i -g yarn
+
 echo "Install mysqlworkbench, firefox, chrome, sublime text, spotify, cyberduck, vscode, docker"
 brew install --cask --force mysqlworkbench firefox google-chrome sublime-text spotify slack postman cyberduck visual-studio-code docker
 brew upgrade --cask --force mysqlworkbench firefox google-chrome sublime-text spotify slack postman cyberduck visual-studio-code docker
