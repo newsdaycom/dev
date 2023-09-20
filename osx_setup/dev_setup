@@ -7,8 +7,9 @@ echo "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 if [[ "$(uname -m)" == "arm64" ]]; then
-  echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
-  export PATH="/opt/homebrew/bin:${PATH}"
+    echo "Arm64 detected, adding homebrew to path"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/joshalletto/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 clear
