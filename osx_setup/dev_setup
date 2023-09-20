@@ -5,6 +5,12 @@ set -e
 
 echo "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+if [[ "$(uname -m)" == "arm64" ]]; then
+  echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+  export PATH="/opt/homebrew/bin:${PATH}"
+fi
+
 clear
 
 echo "Installing awscli, nodejs, python, cask"
