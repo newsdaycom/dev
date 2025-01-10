@@ -10,23 +10,23 @@ if [[ "$(uname -m)" == "arm64" ]]; then
     echo "Arm64 detected, adding homebrew to path"
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    source ~/.zprofile
 fi
 
 clear
 
 echo "Installing awscli, nodejs, python, cask"
-brew install --force awscli node@18 python cask
-brew upgrade --force awscli node@18 python cask
-echo 'export PATH=/usr/local/opt/node@18/bin:$PATH' >> ~/.zprofile
+brew install --force awscli node@20 python cask
+brew upgrade --force awscli node@20 python cask
+echo 'export PATH=/usr/local/opt/node@20/bin:$PATH' >> ~/.zprofile
 source ~/.zprofile
 
 clear
 echo "Installing yarn"
 sudo npm i -g yarn
 
-echo "Install mysqlworkbench, firefox, chrome, sublime text, spotify, cyberduck, vscode, docker"
-brew install --cask --force mysqlworkbench firefox google-chrome sublime-text spotify slack postman cyberduck visual-studio-code docker
-brew upgrade --cask --force mysqlworkbench firefox google-chrome sublime-text spotify slack postman cyberduck visual-studio-code docker
+echo "Install mysqlworkbench, firefox, sublime text, cyberduck, vscode, docker"
+brew install --cask --force mysqlworkbench firefox sublime-text postman cyberduck visual-studio-code docker
 clear
 
 brew doctor
